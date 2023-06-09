@@ -44,10 +44,11 @@ letter:
     ret
         
 printcount:
-    xor ax, ax
-    mov ax, cx
+    push ax
+    mov al, cl
     mov ah, 0x0e
     int 10h
+    pop ax
     ret
 
 putchar:
