@@ -1,23 +1,30 @@
 org 0x7c00
 jmp _start
 
+buffer times 64 db 0
+
 BITS 16
 
 _start:
-    xor ax, ax
+    mov si, buffer
+    xor ax, ax 
+    xor cx, cx 
+    xor dx, dx 
     
     call getstring
     call done
     
 getstring:
-    mov ah, 0x00 
-    int 16h
+    call getchar
     call putchar
-    cmp al, 0x0d 
+    cmp al, 0x0d
     je .endl
+    stosb
+    inc si
+    
     jmp getstring
     
-    .endl:
+    .endl: 
         mov ax, 0x0a
         call putchar
         mov ax, 0x0d
@@ -31,7 +38,7 @@ getstring:
         
 putchar:
     mov ah, 0x0e
-    int 10h
+    int 10h 
     ret
     
 getchar:
@@ -44,6 +51,4 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
-    
-    
-    
+   
