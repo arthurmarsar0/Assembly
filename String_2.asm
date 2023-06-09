@@ -13,7 +13,6 @@ _start:
     call getstring
     call endl
     call letter
-    call teste
     call endl 
     call count_loop
     call print_count
@@ -42,13 +41,13 @@ endl:
 letter:
     call getchar
     call putchar
-    ret
-    
-teste:
-    call getchar
-    call putchar
-    ret
+    jmp .teste
         
+    .teste:
+        call getchar
+        call putchar
+        ret
+            
 count_loop:
     lodsb
     cmp al, 0
