@@ -47,7 +47,7 @@ letter:
     ret
         
 printcount:
-    mov cx, 0x0e
+    mov ch, 0x0e
     int 10h
     ret
 
