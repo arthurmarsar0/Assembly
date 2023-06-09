@@ -1,5 +1,5 @@
 org 0x7c00
-jmp_start
+jmp _start
 
 message db "Hello World!", 0
 BITS 16
