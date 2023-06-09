@@ -12,7 +12,7 @@ _start:
     
     call getstring
     call endl
-    ;call letter
+    call letter
     call endl 
     call count_loop
     call print_count
@@ -38,10 +38,10 @@ endl:
     call putchar
     ret
         
-;letter:
- ;   call getchar
-  ;  call putchar
-   ; ret
+letter:
+    call getchar
+    call putchar
+    ret
         
 count_loop:
     lodsb
