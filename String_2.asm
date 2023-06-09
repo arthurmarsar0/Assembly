@@ -40,7 +40,6 @@ endl:
         
 letter:
     call getchar
-    mov bl, al
     call putchar
     ret
         
