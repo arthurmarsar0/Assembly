@@ -3,8 +3,6 @@ jmp _start
 
 buffer times 64 db 0
 
-BITS 16
-
 _start:
     mov si, buffer
     xor ax, ax 
@@ -47,7 +45,9 @@ letter:
     ret
         
 printcount:
-    mov ch, 0x0e
+    xor ax, ax
+    mov ax, cx
+    mov ah, 0x0e
     int 10h
     ret
 
