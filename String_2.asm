@@ -15,7 +15,7 @@ _start:
     call letter
     call endl
     call count_loop
-    call printcount
+    call print_count
     call done
     
 getstring:
