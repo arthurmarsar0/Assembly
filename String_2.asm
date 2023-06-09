@@ -23,12 +23,15 @@ getstring:
     call getchar
     call putchar
     cmp al, 0x0d
-    je ret
+    je .done
     inc cl 
     stosb
     inc si
     
     jmp getstring
+    
+    .done:
+        ret
             
 endl: 
     mov ax, 0x0a
