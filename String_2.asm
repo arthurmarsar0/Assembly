@@ -13,6 +13,7 @@ _start:
     call getstring
     call endl
     call letter
+    call teste
     call endl 
     call count_loop
     call print_count
@@ -32,7 +33,6 @@ getstring:
         ret
             
 endl: 
-    xor ax, ax 
     mov ax, 0x0a
     call putchar
     mov ax, 0x0d
@@ -40,6 +40,11 @@ endl:
     ret
         
 letter:
+    call getchar
+    call putchar
+    ret
+    
+teste:
     call getchar
     call putchar
     ret
