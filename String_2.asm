@@ -13,9 +13,9 @@ _start:
     call getstring
     call endl
     call letter
-    call endl
-    call print_count
+    call endl 
     call count_loop
+    call print_count
     call done
     
 getstring:
@@ -32,6 +32,7 @@ getstring:
         ret
             
 endl: 
+    xor ax, ax 
     mov ax, 0x0a
     call putchar
     mov ax, 0x0d
