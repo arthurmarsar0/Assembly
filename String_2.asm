@@ -15,16 +15,17 @@ _start:
     call letter
     call endl 
     call print_count
+    call endl
+    call print_count2
     call done
     
 getstring:
+    lodsb
     call getchar
     call putchar
     cmp al, 0x0d
     je .done
     inc cx
-    stosb
-    inc si
     
     jmp getstring
     
@@ -41,6 +42,7 @@ endl:
 letter:
     call getchar
     call putchar
+    mov bl, al
     ret
         
 print_count:
@@ -49,6 +51,10 @@ print_count:
     add al, '0'
     int 10h
     ret
+    
+print_count2:
+    ret   
+    
 
 putchar:
     mov ah, 0x0e
