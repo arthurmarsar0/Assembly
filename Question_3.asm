@@ -6,23 +6,24 @@ _start:
     xor si, si
     
     call getchar
-    call endl
+    ;call endl
     
     xor ax, ax
     call getchar
-    call endl
+    ;call endl
 
     xor ax, ax
     call getchar
-    call endl
+    ;call endl
     
     xor ax, ax
     call getchar
-    call endl
+    ;call endl
     
     xor ax, ax
     xor si, si
     call teste
+    
     call done
     
 getchar:
