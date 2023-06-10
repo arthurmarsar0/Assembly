@@ -19,7 +19,6 @@ _start:
     call done
     
 getstring:
-    lodsb
     call getchar
     call putchar 
     cmp al, 0x0d 
@@ -37,6 +36,7 @@ endl:
     call putchar
     mov ax, 0x0d
     call putchar
+    xor ax, ax
     ret
         
 letter:
