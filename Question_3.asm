@@ -3,6 +3,7 @@ jmp _start
 
 _start:
     xor ax, ax
+    xor si, si
     
     call getchar
     call endl
@@ -20,6 +21,7 @@ _start:
     call endl
     
     xor ax, ax
+    xor si, si
     call teste
     call done
     
