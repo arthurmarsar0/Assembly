@@ -29,7 +29,6 @@ endl:
 letter:
     call getchar
     call putchar
-    jmp letter
     call endl 
     ret
         
