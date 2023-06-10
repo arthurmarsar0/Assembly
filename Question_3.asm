@@ -6,19 +6,19 @@ _start:
     xor si, si
     
     call getchar
-    ;call endl
+    call endl
     
     xor ax, ax
     call getchar
-    ;call endl
+    call endl
 
     xor ax, ax
     call getchar
-    ;call endl
+    call endl
     
     xor ax, ax
     call getchar
-    ;call endl
+    call endl
     
     xor ax, ax
     xor si, si
@@ -34,6 +34,8 @@ getchar:
     sub ax, '0'
     
     stosb
+    inc si
+    
     ret
     
 putchar:
