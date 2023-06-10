@@ -4,7 +4,7 @@ jmp _start
 _start:
     xor si, si
     xor ax, ax 
-    xor bx, bxs
+    xor bx, bx
     xor cx, cx 
     xor dx, dx 
     
