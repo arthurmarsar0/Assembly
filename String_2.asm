@@ -14,10 +14,10 @@ _start:
     call endl
     call letter
     call endl 
-    call print_count
-    call endl
     xor si, si
     call print_count2
+    call bar
+    call print_count
     call done
     
 getstring:
@@ -72,6 +72,12 @@ print_count2:
         add al, '0'
         int 10h
         ret
+        
+bar:
+    mov ah, 0x0e
+    mov al, '/'
+    int 10h
+    ret
     
 putchar:
     mov ah, 0x0e
