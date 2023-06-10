@@ -16,17 +16,16 @@ _start:
     call endl 
     call print_count
     call endl
-    xor si, si
     call print_count2
     call done
     
 getstring:
-    lodsb
     call getchar
     call putchar
     cmp al, 0x0d
     je .done
     inc cx
+    stosb
     
     jmp getstring
     
