@@ -19,6 +19,7 @@ _start:
     call done
     
 getstring:
+    lodsb
     call getchar
     call putchar 
     cmp al, 0x0d 
