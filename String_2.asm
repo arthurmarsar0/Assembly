@@ -1,12 +1,10 @@
 org 0x7c00
 jmp _start
 
-buffer times 64 db 0
-
 _start:
-    mov si, buffer
+    xor si, si
     xor ax, ax 
-    xor bx, bx
+    xor bx, bxs
     xor cx, cx 
     xor dx, dx 
     
@@ -69,7 +67,7 @@ print_count2:
     .print:
         mov al, dl
         mov ah, 0x0e
-        add al, '0'
+        add al, '0' 
         int 10h
         ret
         
@@ -97,5 +95,6 @@ dw 0xaa55
     
     
     
+
 
 
