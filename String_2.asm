@@ -15,6 +15,13 @@ _start:
     call endl
     call endl 
     call endl
+    call endl
+    call endl
+    call endl
+    call endl
+    call endl
+    call endl
+    call endl
     call letter
     call count_loop
     call print_count
