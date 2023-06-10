@@ -11,32 +11,19 @@ _start:
     xor dx, dx 
     xor si, si
     
-    call getstring
+    ;call getstring
     call endl
     call letter
     call count_loop
     call print_count
     call done
     
-getstring:
-    call getchar
-    call putchar 
-    cmp al, 0x0d 
-    je .done
-    stosb
-    inc si 
-    
-    jmp getstring
-    
-    .done:
-        ret
-            
+           
 endl: 
     mov ax, 0x0a
     call putchar
     mov ax, 0x0d
     call putchar
-    xor ax, ax
     ret
         
 letter:
