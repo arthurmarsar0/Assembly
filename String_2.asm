@@ -53,12 +53,23 @@ print_count:
     ret
     
 print_count2:
-    mov al, bl
-    mov ah, 0x0e
-    int 10h
-    ret   
+    cmp al, bl
+    je .count 
+    cmp al, 0
+    je .print
     
-
+    jmp print_count2
+    
+    .count:
+        inc dx
+    
+    .print:
+        mov al, dl
+        mov ah, 0x0e
+        add al, '0'
+        int 10h
+        ret
+    
 putchar:
     mov ah, 0x0e
     int 10h 
