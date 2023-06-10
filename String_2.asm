@@ -57,6 +57,7 @@ print_count2:
     je .count 
     cmp al, 0
     je .print
+    stosb
     
     jmp print_count2
     
