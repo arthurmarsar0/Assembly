@@ -13,18 +13,17 @@ _start:
     call getstring
     call endl
     call letter
-    call endl 
     call count_loop
     call print_count
     call done
     
 getstring:
     call getchar
-    call putchar
-    cmp al, 0x0d
+    call putchar 
+    cmp al, 0x0d 
     je .done
     stosb
-    inc si
+    inc si 
     
     jmp getstring
     
@@ -41,6 +40,7 @@ endl:
 letter:
     call getchar
     call putchar
+    call endl 
     ret
         
 count_loop:
@@ -81,4 +81,5 @@ dw 0xaa55
     
     
     
+
 
