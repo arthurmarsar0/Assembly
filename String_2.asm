@@ -16,6 +16,7 @@ _start:
     call endl 
     call print_count
     call endl
+    xor si, si
     call print_count2
     call done
     
