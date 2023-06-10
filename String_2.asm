@@ -64,6 +64,7 @@ print_count2:
     
     .count:
         inc dx
+        jmp print_count2
     
     .print:
         mov al, dl
