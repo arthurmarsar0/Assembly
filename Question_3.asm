@@ -31,10 +31,9 @@ getchar:
     int 16h
     call putchar
     
-    sub ax, '0'
+    sub al, '0'
     
     stosb
-    inc si
     
     ret
     
