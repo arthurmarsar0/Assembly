@@ -6,16 +6,20 @@ _start:
     
     call getchar
     call endl
-
+    
+    xor ax, ax
     call getchar
     call endl
 
+    xor ax, ax
     call getchar
     call endl
     
+    xor ax, ax
     call getchar
     call endl
     
+    xor ax, ax
     call teste
     call done
     
