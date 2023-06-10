@@ -44,12 +44,10 @@ letter:
     ret
         
 print_count:
-    push cx
     mov al, cl
     mov ah, 0x0e
     add al, '0'
     int 10h
-    pop cx
     ret
 
 putchar:
