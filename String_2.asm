@@ -16,6 +16,7 @@ _start:
     call endl 
     call print_count
     call endl
+    xor si, si
     call print_count2
     call done
     
@@ -26,7 +27,6 @@ getstring:
     cmp al, 0x0d
     je .done
     inc cx
-    inc si
     
     jmp getstring
     
