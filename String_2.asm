@@ -9,6 +9,7 @@ _start:
     xor bx, bx
     xor cx, cx 
     xor dx, dx 
+    xor si, si
     
     call getstring
     call endl
