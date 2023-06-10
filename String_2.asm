@@ -26,6 +26,7 @@ getstring:
     cmp al, 0x0d
     je .done
     inc cx
+    inc si
     
     jmp getstring
     
