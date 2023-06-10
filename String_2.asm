@@ -53,11 +53,11 @@ print_count:
     ret
     
 print_count2:
+    lodsb
     cmp al, bl
     je .count 
     cmp al, 0
     je .print
-    stosb
     
     jmp print_count2
     
