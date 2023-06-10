@@ -13,29 +13,6 @@ _start:
     
     call getstring
     call endl
-    call endl 
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
-    call endl
     call letter
     call count_loop
     call print_count
@@ -65,6 +42,7 @@ endl:
 letter:
     call getchar
     call putchar
+    jmp letter
     call endl 
     ret
         
