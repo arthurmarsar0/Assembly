@@ -53,6 +53,9 @@ print_count:
     ret
     
 print_count2:
+    mov al, bl
+    mov ah, 0x0e
+    int 10h
     ret   
     
 
