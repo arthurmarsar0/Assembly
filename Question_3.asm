@@ -1,3 +1,4 @@
+
 org 0x7c00
 jmp _start
 
@@ -35,6 +36,8 @@ getchar:
     
     stosb
     
+    add al, '0'
+    
     ret
     
 putchar:
@@ -66,5 +69,7 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
+
+
 
 
