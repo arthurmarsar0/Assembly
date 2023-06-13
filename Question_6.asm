@@ -32,7 +32,7 @@ getinput:
 
     sub ax, '0'
     stosb
-    add ax, 48
+    add ax, '0'
 
     call putchar
 
@@ -78,7 +78,7 @@ solve:
         ret
         
 fib:
-    cmp cl, al
+    cmp cx, ax
     je .endfib
     
     inc cx
