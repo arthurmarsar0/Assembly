@@ -21,6 +21,13 @@ _start:
     call endl
 
     call solve
+    
+    xor cx, cx
+    xor bx, bx
+    mov bx, 1
+    push bx
+    push bx
+    call fib
 
     jmp done
 
