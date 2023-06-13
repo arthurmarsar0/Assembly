@@ -108,7 +108,7 @@ fib:
         jmp .mod11
         
         .done:
-            add ax, '0'
+            add al, '0'
             call putchar
             ret
     
