@@ -6,12 +6,14 @@ _start:
     xor si, si
     xor cx, cx
     xor dx, dx
+    mov ds, ax
     
     mov ah, 0
     mov al, 12h
     int 10h
     
     mov bl, 0xf
+    
     xor ax, ax
     call getinput
     call endl
