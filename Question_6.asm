@@ -59,10 +59,10 @@ solve:
     lodsb
     mov bx, ax
 
+    lodsb
+
     cmp cx, 2
     jne .not_dez
-    
-    lodsb
 
     cmp cx, 2
     je .dez
