@@ -4,7 +4,6 @@ jmp _start
 _start:
     xor ax,ax
     xor si, si
-    xor bx, bx
     xor cx, cx
     xor dx, dx
     
@@ -16,12 +15,10 @@ _start:
     call getinput
     
     xor cx, cx
-    mov cx, 1
     xor bx, bx
-    xor ax, ax
-    mov ax, 1
-    push ax
-    push ax
+    mov bx, 1
+    push bx
+    push bx
     call fib
     
     call done
@@ -41,7 +38,7 @@ getchar:
     
     call putchar
     
-    call getchar
+    jmp getchar
     
     .done: 
         ret
@@ -59,48 +56,51 @@ endl:
     ret
     
 getinput:
-    cmp cl, 2
-    jmp .dez
+    xor bx, bx
     
     lodsb
-    mov dx, ax
-    jmp .done
+    mov bx, ax
     
-    .dez:
-        xor cx, cx
-        lodsb
-        mov bx, ax
-        imul bx, 10
-        add dl, bl
-        lodsb
-        xor bx, bx
-        mov bx, ax
-        add dl, bl
-        ret
-        
-    .done:
-        ret
-        
-fib:
-    inc cx
-    cmp cx, dx
-    je .mod11
+    cmp cx, 2
+    jne .not_dez
+    
+    lodsb
 
-    pop ax
+    cmp cx, 2
+    je .dez
+
+    .not_dez:
+        xor ax, ax
+        mov ax, bx
+        ret
+
+    .dez:
+        imul bx, 10
+        add ax, bx
+        ret
+         
+fib:
+    cmp cx, ax
+    je .endfib
     
-    add bx, ax
+    inc cx
     
-    pop ax
+    pop dx
     
-    add bx, ax
+    pop bx
+    
+    add dx, bx
+    
+    push dx
     
     push bx
     
-    push ax
-    
-    xor bx, bx
-    
     jmp fib
+    
+    .endfib:
+        xor ax, ax
+        mov ax, bx
+        jmp .mod11
     
     .mod11:
         cmp ax, 11
@@ -118,3 +118,5 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
+
+
