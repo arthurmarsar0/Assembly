@@ -58,8 +58,6 @@ solve:
     
     lodsb
     mov bx, ax
-    
-    xor ax, ax
 
     lodsb
 
