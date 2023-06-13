@@ -34,12 +34,13 @@ getchar:
     cmp al, 0x0d
     jmp .done
     
-    inc cl
-    
-    call putchar
+    inc cx
     
     sub al, '0' 
     stosb
+    add al, '0'
+    
+    call putchar
     
     call getchar
     
