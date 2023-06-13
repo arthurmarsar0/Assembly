@@ -6,18 +6,7 @@ _start:
     xor cx, cx
     xor dx, dx
     xor si, si
-    
-    mov ah, 0
-    mov bh, 12h
-    int 10h
 
-    mov ah, 0xb
-    mov bh, 0
-    mov bl, 1h
-    int 10h
-    
-    
-    xor ax, ax
     call getinput
     call endl
 
