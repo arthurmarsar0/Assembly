@@ -10,7 +10,8 @@ _start:
     mov ah, 0
     mov al, 12h
     int 10h
-
+    
+    mov bl, 0xf
     xor ax, ax
     call getinput
     call endl
