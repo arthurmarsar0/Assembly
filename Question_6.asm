@@ -47,9 +47,9 @@ putchar:
     ret
 
 endl:
-    mov ax, 0x0a
+    mov al, 0x0a
     call putchar
-    mov ax, 0x0d
+    mov al, 0x0d
     call putchar
     ret
     
