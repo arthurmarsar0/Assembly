@@ -14,9 +14,9 @@ _start:
     
     xor cx, cx
     xor bx, bx
-    mov cx, 1
-    push cx
-    push cx
+    mov bx, 1
+    push bx
+    push bx
     call fib
 
     jmp done
@@ -78,26 +78,26 @@ solve:
         ret
         
 fib:
-    inc bx
+    inc cl
     
-    cmp bx, ax
+    cmp cl, al
     je .endfib
     
     pop dx
     
-    pop cx
+    pop bx
     
-    add dx, cx
+    add dx, bx
     
     push dx
     
-    push cx
+    push bx
     
     jmp fib
     
     .endfib:
         xor ax, ax
-        mov ax, cx
+        mov ax, bx
         jmp .mod11
     
     .mod11:
