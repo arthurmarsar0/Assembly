@@ -78,7 +78,7 @@ solve:
         ret
         
 fib:
-    cmp cx, ax
+    cmp cl, al
     je .endfib
     
     inc cx
