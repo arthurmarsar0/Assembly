@@ -32,9 +32,9 @@ getchar:
     
     inc cx
     
-    sub al, '0' 
+    sub ax, '0' 
     stosb
-    add al, '0'
+    add ax, '0'
     
     call putchar
     
@@ -118,5 +118,6 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
+
 
 
