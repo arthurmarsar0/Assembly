@@ -11,6 +11,8 @@ _start:
     call getchar
     call endl
     
+    xor si, si
+    
     call getinput
     
     xor cx, cx
