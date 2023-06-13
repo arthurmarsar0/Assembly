@@ -22,6 +22,7 @@ _start:
     jmp done
 
 getinput:
+    xor ax, ax
     mov ah, 0x0
     int 16h
 
@@ -30,9 +31,9 @@ getinput:
 
     inc cx
 
-    sub ax, '0'
+    sub al, '0'
     stosb
-    add ax, '0'
+    add al, '0'
 
     call putchar
 
