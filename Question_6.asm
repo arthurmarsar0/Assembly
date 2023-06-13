@@ -30,9 +30,9 @@ getinput:
 
     inc cx
 
-    sub ax, '0'
+    sub al, '0'
     stosb
-    add ax, '0'
+    add al, '0'
 
     call putchar
 
@@ -108,7 +108,7 @@ fib:
         jmp .mod11
         
         .done:
-            add ax, '0'
+            add al, '0'
             call putchar
             ret
     
