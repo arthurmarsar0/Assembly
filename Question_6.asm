@@ -101,14 +101,14 @@ fib:
         jmp .mod11
     
     .mod11:
-        cmp al, 11
+        cmp ax, 11
         jb .done
         
-        sub al, 11
+        sub ax, 11
         jmp .mod11
         
         .done:
-            add al, '0'
+            add ax, '0'
             call putchar
             ret
     
