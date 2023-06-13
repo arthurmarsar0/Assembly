@@ -26,7 +26,7 @@ getinput:
     int 16h
     
     cmp al, 0x0d
-    jmp .done
+    jmp .done1
     
     inc cx
     
@@ -103,7 +103,7 @@ fib:
     
     .mod11:
         cmp ax, 11
-        jb .done
+        jb .done2
         
         sub ax, 11
         jmp .mod11
