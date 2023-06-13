@@ -7,6 +7,11 @@ _start:
     xor cx, cx
     xor dx, dx
     
+    mov ah, 0
+    mov al, 12h
+    int 10h
+
+    xor ax, ax
     call getinput
     call endl
     
@@ -26,7 +31,7 @@ getinput:
     int 16h
     
     cmp al, 0x0d
-    jmp .done1
+    jmp .done
     
     inc cx
     
@@ -38,7 +43,7 @@ getinput:
     
     jmp getinput
     
-    .done1: 
+    .done: 
         ret
         
 putchar:
@@ -103,12 +108,12 @@ fib:
     
     .mod11:
         cmp ax, 11
-        jb .done2
+        jb .done
         
         sub ax, 11
         jmp .mod11
         
-        .done2:
+        .done:
             call putchar
             ret
     
