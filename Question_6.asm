@@ -4,19 +4,9 @@ jmp _start
 _start:
     xor ax, ax
     xor cx, cx
-    xor si, si
-    mov ds, ax
-    
-    mov ah, 0
-    mov al, 12h
-    int 10h
-
-    xor ax, ax
-    xor cx, cx
+    xor dx, dx
     xor si, si
 
-
-    mov bl, 0xf
     call getinput
     call endl
 
