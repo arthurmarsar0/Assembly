@@ -78,9 +78,9 @@ solve:
         ret
         
 fib:
-    inc cl
+    inc cx
     
-    cmp cl, al
+    cmp cx, ax
     je .endfib
     
     pop dx
