@@ -38,7 +38,7 @@ getinput:
     
     jmp getinput
     
-    .done: 
+    .done1: 
         ret
         
 putchar:
@@ -108,7 +108,7 @@ fib:
         sub ax, 11
         jmp .mod11
         
-        .done:
+        .done2:
             call putchar
             ret
     
