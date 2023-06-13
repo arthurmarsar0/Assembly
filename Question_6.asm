@@ -27,7 +27,6 @@ _start:
     call done
     
 getchar:
-    xor ax, ax
     mov ah, 0x00 
     int 16h
     
