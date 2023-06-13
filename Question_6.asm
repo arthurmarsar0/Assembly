@@ -32,7 +32,7 @@ getinput:
 
     sub ax, '0'
     stosb
-    add ax, '0'
+    add ax, 48
 
     call putchar
 
