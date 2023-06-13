@@ -19,7 +19,7 @@ _start:
     mov bx, 1
     push bx
     push bx
-    call fib
+    ;call fib
     
     call done
     
@@ -61,11 +61,11 @@ getinput:
     lodsb
     mov bx, ax
     
+    lodsb
+    
     cmp cx, 2
     jne .not_dez
     
-    lodsb
-
     cmp cx, 2
     je .dez
 
