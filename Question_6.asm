@@ -58,6 +58,8 @@ solve:
     
     lodsb
     mov bx, ax
+    
+    xor ax, ax
 
     lodsb
 
@@ -78,7 +80,7 @@ solve:
         ret
         
 fib:
-    cmp cx, ax
+    cmp cl, al
     je .endfib
     
     inc cx
