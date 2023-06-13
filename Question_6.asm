@@ -108,6 +108,7 @@ fib:
         jmp .mod11
         
         .done:
+            add ax, '0'
             call putchar
             ret
     
