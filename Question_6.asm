@@ -6,7 +6,6 @@ _start:
     xor si, si
     xor cx, cx
     xor dx, dx
-    mov ds, ax
     
     mov ah, 0
     mov al, 12h
@@ -55,9 +54,9 @@ putchar:
     ret
 
 endl:
-    mov ah, 0x0a
+    mov ax, 0x0a
     call putchar
-    mov ah, 0x0d
+    mov ax, 0x0d
     call putchar
     ret
     
