@@ -7,23 +7,21 @@ _start:
     xor cx, cx
     xor dx, dx
     
-    call getchar
+    call getinput
     call endl
     
-    xor si, si
+    call solve
     
-    call getinput
-    
-    xor cx, cx
-    xor bx, bx
-    mov bx, 1
-    push bx
-    push bx
+    ;xor cx, cx
+    ;xor bx, bx
+    ;mov bx, 1
+    ;push bx
+    ;push bx
     ;call fib
     
     call done
     
-getchar:
+getinput:
     mov ah, 0x00 
     int 16h
     
@@ -38,7 +36,7 @@ getchar:
     
     call putchar
     
-    jmp getchar
+    jmp getinput
     
     .done: 
         ret
@@ -55,7 +53,8 @@ endl:
     call putchar
     ret
     
-getinput:
+solve:
+    xor si, si
     xor bx, bx
     
     lodsb
