@@ -78,10 +78,10 @@ solve:
         ret
         
 fib:
+    inc bx
+    
     cmp bx, ax
     je .endfib
-    
-    inc bx
     
     pop dx
     
