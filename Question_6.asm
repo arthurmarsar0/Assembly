@@ -22,7 +22,6 @@ _start:
     jmp done
 
 getinput:
-    xor ax, ax
     mov ah, 0x0
     int 16h
 
@@ -31,9 +30,9 @@ getinput:
 
     inc cx
 
-    sub al, '0'
+    sub ax, '0'
     stosb
-    add al, '0'
+    add ax, '0'
 
     call putchar
 
@@ -60,10 +59,10 @@ solve:
     lodsb
     mov bx, ax
 
-    lodsb
-
     cmp cx, 2
     jne .not_dez
+    
+    lodsb
 
     cmp cx, 2
     je .dez
