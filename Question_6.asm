@@ -47,9 +47,9 @@ putchar:
     ret
 
 endl:
-    mov al, 0x0a
+    mov ax, 0x0a
     call putchar
-    mov al, 0x0d
+    mov ax, 0x0d
     call putchar
     ret
     
@@ -62,10 +62,10 @@ solve:
     
     lodsb
     
-    cmp cx, 2
+    cmp cl, 2
     jne .not_dez
     
-    cmp cx, 2
+    cmp cl, 2
     je .dez
 
     .not_dez:
