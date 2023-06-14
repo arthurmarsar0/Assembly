@@ -12,11 +12,14 @@ _start:
 
     call solve
     
-    xor cx, cx
+    xor si, si
     xor bx, bx
-    mov bx, 1
-    push bx
-    push bx
+    mov bx, ax
+    
+    xor cx, cx
+    xor ax, ax
+    mov ax, 1
+    mov dx, 1
     call fib
 
     jmp done
@@ -80,25 +83,17 @@ solve:
 fib:
     inc cx
     
-    cmp cx, ax
-    je .endfib
+    cmp cx, bx
+    je .mod11
     
-    pop dx
+    xor si, si
+    mov si, ax
     
-    pop bx
+    add ax, dx
     
-    add dx, bx
-    
-    push dx
-    
-    push bx
+    mov dx, si
     
     jmp fib
-    
-    .endfib:
-        xor ax, ax
-        mov ax, bx
-        jmp .mod11
     
     .mod11:
         cmp ax, 11
@@ -117,6 +112,8 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
+
+
 
 
 
