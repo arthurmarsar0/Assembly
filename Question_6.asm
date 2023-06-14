@@ -84,28 +84,35 @@ fib:
     inc cx
     
     cmp cl, bl
-    je .mod11
+    je .prep
     
     xor si, si
     mov si, ax
     
-    add ax, dx
+    add ax, dx 
     
     mov dx, si
     
     jmp fib
     
-    .mod11:
-        cmp ax, 11
-        jb .done
-        
-        sub ax, 11
+    .prep:
+        xor ax, ax
+        mov ax, dx
         jmp .mod11
-        
-        .done:
-            add ax, '0'
-            call putchar
-            ret
+    
+        .mod11:
+            xor ax, ax
+            mov ax, dx
+            cmp ax, 11
+            jb .done
+            
+            sub ax, 11
+            jmp .mod11
+            
+            .done:
+                add ax, '0'
+                call putchar
+                ret
     
 done:
     jmp $
