@@ -62,10 +62,10 @@ solve:
     lodsb
     mov bx, ax
 
-    lodsb
-
     cmp cx, 2
     jne .not_dez
+    
+    lodsb
 
     cmp cx, 2
     je .dez
@@ -112,6 +112,7 @@ done:
     
 times 510 - ($ - $$) db 0
 dw 0xaa55
+
 
 
 
