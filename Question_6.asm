@@ -112,9 +112,9 @@ fib:
             
             .dez:
                 xor ax, ax
-                mov ax, 1
+                mov ax, '1'
                 call putchar
-                xor ax,ax
+                mov ax, '0'
                 call putchar
                 ret
                 
