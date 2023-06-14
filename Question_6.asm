@@ -101,8 +101,6 @@ fib:
         jmp .mod11
     
         .mod11:
-            xor ax, ax
-            mov ax, dx
             cmp ax, 11
             jb .done
             
