@@ -101,16 +101,27 @@ fib:
         jmp .mod11
     
         .mod11:
-            cmp ax, 11
+            cmp ax, 10
             jb .done
+            
+            cmp ax, 10
+            je .dez
             
             sub ax, 11
             jmp .mod11
             
-            .done:
-                add ax, '0'
+            .dez:
+                xor ax, ax
+                mov ax, 1
+                call putchar
+                xor ax,ax
                 call putchar
                 ret
+                
+                .done:
+                    add ax, '0'
+                    call putchar
+                    ret
     
 done:
     jmp $
