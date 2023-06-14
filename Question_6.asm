@@ -83,7 +83,7 @@ solve:
 fib:
     inc cx
     
-    cmp cx, bx
+    cmp cl, bl
     je .mod11
     
     xor si, si
