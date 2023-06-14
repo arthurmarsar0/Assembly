@@ -81,7 +81,7 @@ solve:
         ret
         
 fib:
-    inc cx
+    inc cl
     
     cmp cl, bl
     je .prep
